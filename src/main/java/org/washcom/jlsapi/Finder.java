@@ -48,7 +48,7 @@ public class Finder {
             add("java.lang.reflect.AnnotatedElement");
             add("java.lang.reflect.GenericArrayType");
             add("java.lang.reflect.GenericDeclaration");
-            add("java.lang.reflect.InvocatoinHandler");
+            add("java.lang.reflect.InvocationHandler");
             add("java.lang.reflect.Member");
             add("java.lang.reflect.ParameterizedType");
             add("java.lang.reflect.TypeVariable");
@@ -57,7 +57,7 @@ public class Finder {
             add("java.lang.reflect.Method");
             add("java.lang.reflect.Modifier");
             add("java.lang.reflect.Proxy");
-            add("java.lang.reflect.ReflectPermissionr");
+            add("java.lang.reflect.ReflectPermission");
             add("java.lang.reflect.Field");
             add("java.lang.reflect.Type");
             add("java.io.Serializable");
@@ -68,9 +68,11 @@ public class Finder {
             add("java.lang.Short");
             add("java.lang.Integer");
             add("java.lang.Long");
+            add("java.lang.Math");
             add("java.lang.ArithmeticException");
             add("java.lang.NullPointerException");
             add("java.lang.OutOfMemoryError");
+            add("java.lang.IncompatibleClassChangeError");
             add("java.lang.Cloneable");
             add("java.lang.Iterable");
             add("java.lang.ArrayStoreException");
@@ -78,7 +80,8 @@ public class Finder {
             add("java.lang.annotation.Target");
             add("java.lang.annotation.ElementType");
             add("java.lang.ClassCircularityError");
-            // Examples
+            
+            // Classes listed in Examples
             add("java.util.Vector");
             add("java.util.Collection");
             add("java.lang.ref.Reference");
@@ -93,7 +96,7 @@ public class Finder {
 
         @Override
         public int compare(Class<?> o1, Class<?> o2) {
-            return o1.toString().compareTo(o2.toString());
+            return o1.getName().compareTo(o2.getName());
         }
 
     });
@@ -117,15 +120,18 @@ public class Finder {
     }
 
     static void analyzeType(Class<?> type) {
-        if (type == null) {
+        if (type == null || type.isPrimitive() || type.isAnonymousClass()) {
+            return;
+        } else if (type.isArray()) {
+            analyzeType(type.getComponentType());
             return;
         }
+        
         if (specialTypes.contains(type)) {
             return;
         }
         specialTypes.add(type);
 
-        analyzeTypes(type.getClasses());
         analyzeTypes(type.getDeclaredClasses());
         for (Field field : type.getFields()) {
             analyzeType(field.getType());
@@ -146,7 +152,8 @@ public class Finder {
             analyzeTypeName(special);
         }
         for (Class<?> type : specialTypes) {
-            System.out.println(type);
+            String delim = type.isInterface() ? "_" : "";
+            System.out.println("* " + delim + type.getName() + delim);
         }
         System.out.println(specialTypes.size() + " types in total.");
     }
