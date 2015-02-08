@@ -23,238 +23,246 @@ to the Java language itself.
 * Configurable input list of type names
 * Screen scrape the HTML specification to locate directly-referenced types
 
-## The Results (so far, slightly cleaned up)
-
-* class java.nio.file.AccessMode;
-* class java.nio.file.CopyOption;
-* class java.nio.file.LinkOption;
-* class java.nio.file.OpenOption;
-* class java.nio.file.WatchEvent$Kind;
-* class java.nio.file.WatchEvent$Modifier;
-* class java.nio.file.attribute.FileAttribute;
-* class java.security.CodeSigner;
-* class java.security.Principal;
-* class java.security.cert.Certificate;
-* class java.io.Console
-* class java.io.Console$LineReader
-* class java.io.File
-* class java.io.File$TempDirectory
-* class java.io.FileDescriptor
-* class java.io.FileNotFoundException
-* class java.io.IOException
-* class java.io.InputStream
-* class java.io.OutputStream
-* class java.io.PrintStream
-* class java.io.PrintWriter
-* class java.io.Reader
-* class java.io.SyncFailedException
-* class java.io.UnsupportedEncodingException
-* class java.io.Writer
-* class java.lang.AbstractStringBuilder
-* class java.lang.ArithmeticException
-* class java.lang.ArrayIndexOutOfBoundsException
-* class java.lang.ArrayStoreException
-* class java.lang.Byte
-* class java.lang.Byte$ByteCache
-* class java.lang.Character
-* class java.lang.Character$CharacterCache
-* class java.lang.Character$Subset
-* class java.lang.Character$UnicodeBlock
-* class java.lang.Character$UnicodeScript
-* class java.lang.Class
-* class java.lang.Class$EnclosingMethodInfo
-* class java.lang.Class$MethodArray
-* class java.lang.ClassCircularityError
-* class java.lang.ClassLoader
-* class java.lang.ClassLoader$NativeLibrary
-* class java.lang.ClassLoader$ParallelLoaders
-* class java.lang.ClassNotFoundException
-* class java.lang.Double
-* class java.lang.Enum
-* class java.lang.Error
-* class java.lang.Exception
-* class java.lang.Float
-* class java.lang.IllegalAccessException
-* class java.lang.IllegalArgumentException
-* class java.lang.InstantiationException
-* class java.lang.Integer
-* class java.lang.Integer$IntegerCache
-* class java.lang.InterruptedException
-* class java.lang.Long
-* class java.lang.Long$LongCache
-* class java.lang.NegativeArraySizeException
-* class java.lang.NoSuchFieldException
-* class java.lang.NoSuchMethodException
-* class java.lang.NullPointerException
-* class java.lang.NumberFormatException
-* class java.lang.Object
-* class java.lang.OutOfMemoryError
-* class java.lang.Package
-* class java.lang.RuntimeException
-* class java.lang.SecurityException
-* class java.lang.SecurityManager
-* class java.lang.Short
-* class java.lang.Short$ShortCache
-* class java.lang.StackTraceElement
-* class java.lang.String
-* class java.lang.String$1
-* class java.lang.String$CaseInsensitiveComparator
-* class java.lang.StringBuffer
-* class java.lang.StringBuilder
-* class java.lang.System
-* class java.lang.Thread
-* class java.lang.Thread$Caches
-* class java.lang.Thread$State
-* class java.lang.Thread$WeakClassKey
-* class java.lang.ThreadGroup
-* class java.lang.Throwable
-* class java.lang.Throwable$1
-* class java.lang.Throwable$PrintStreamOrWriter
-* class java.lang.Throwable$SentinelHolder
-* class java.lang.Throwable$WrappedPrintStream
-* class java.lang.Throwable$WrappedPrintWriter
-* class java.lang.annotation.ElementType
-* class java.lang.ref.Reference
-* class java.lang.ref.Reference$1
-* class java.lang.ref.Reference$Lock
-* class java.lang.ref.Reference$ReferenceHandler
-* class java.lang.ref.ReferenceQueue
-* class java.lang.ref.ReferenceQueue$1
-* class java.lang.ref.ReferenceQueue$Lock
-* class java.lang.ref.ReferenceQueue$Null
-* class java.lang.reflect.Array
-* class java.lang.reflect.Constructor
-* class java.lang.reflect.Field
-* class java.lang.reflect.InvocationTargetException
-* class java.lang.reflect.Method
-* class java.lang.reflect.Modifier
-* class java.lang.reflect.Proxy
-* class java.net.ContentHandler
-* class java.net.InetAddress
-* class java.net.InetAddress$Cache
-* class java.net.InetAddress$Cache$Type
-* class java.net.InetAddress$CacheEntry
-* class java.net.MalformedURLException
-* class java.net.NetworkInterface
-* class java.net.Proxy
-* class java.net.Proxy$Type
-* class java.net.SocketAddress
-* class java.net.SocketException
-* class java.net.URI
-* class java.net.URI$Parser
-* class java.net.URISyntaxException
-* class java.net.URL
-* class java.net.URLConnection
-* class java.net.URLStreamHandler
-* class java.net.UnknownHostException
-* class java.nio.Buffer
-* class java.nio.ByteBuffer
-* class java.nio.ByteOrder
-* class java.nio.CharBuffer
-* class java.nio.DoubleBuffer
-* class java.nio.FloatBuffer
-* class java.nio.IntBuffer
-* class java.nio.LongBuffer
-* class java.nio.MappedByteBuffer
-* class java.nio.ShortBuffer
-* class java.nio.channels.AsynchronousFileChannel
-* class java.nio.channels.FileChannel
-* class java.nio.channels.FileChannel$MapMode
-* class java.nio.channels.FileLock
-* class java.nio.charset.CharacterCodingException
-* class java.nio.charset.Charset
-* class java.nio.charset.CharsetDecoder
-* class java.nio.charset.CharsetEncoder
-* class java.nio.charset.CoderResult
-* class java.nio.charset.CoderResult$Cache
-* class java.nio.charset.CodingErrorAction
-* class java.nio.file.FileStore
-* class java.nio.file.FileSystem
-* class java.nio.file.attribute.FileTime
-* class java.nio.file.attribute.FileTime$1
-* class java.nio.file.attribute.FileTime$DaysAndNanos
-* class java.nio.file.attribute.UserPrincipalLookupService
-* class java.nio.file.spi.FileSystemProvider
-* class java.security.CodeSource
-* class java.security.Permission
-* class java.security.PermissionCollection
-* class java.security.ProtectionDomain
-* class java.security.ProtectionDomain$Key
-* class java.util.ArrayList
-* class java.util.ArrayList$1
-* class java.util.ArrayList$Itr
-* class java.util.ArrayList$ListItr
-* class java.util.ArrayList$SubList
-* class java.util.InvalidPropertiesFormatException
-* class java.util.Locale
-* class java.util.Locale$1
-* class java.util.Locale$Builder
-* class java.util.Locale$Cache
-* class java.util.Locale$Category
-* class java.util.Locale$LocaleKey
-* class java.util.Locale$LocaleNameGetter
-* class java.util.MissingResourceException
-* class java.util.Properties
-* class java.util.Properties$LineReader
-* class java.util.Random
-* class java.util.Vector
-* class java.util.Vector$Itr
-* class java.util.Vector$ListItr
-* class java.util.concurrent.ExecutionException
-* class java.util.concurrent.TimeUnit
-* class java.util.concurrent.TimeoutException
-* class java.util.spi.LocaleNameProvider
-* interface java.io.FileFilter
-* interface java.io.FilenameFilter
-* interface java.io.Serializable
-* interface java.lang.Appendable
-* interface java.lang.CharSequence
-* interface java.lang.Cloneable
-* interface java.lang.Comparable
-* interface java.lang.Iterable
-* interface java.lang.Runnable
-* interface java.lang.Thread$UncaughtExceptionHandler
-* interface java.lang.annotation.Annotation
-* interface java.lang.annotation.Target
-* interface java.lang.reflect.AnnotatedElement
-* interface java.lang.reflect.GenericArrayType
-* interface java.lang.reflect.GenericDeclaration
-* interface java.lang.reflect.InvocationHandler
-* interface java.lang.reflect.Member
-* interface java.lang.reflect.ParameterizedType
-* interface java.lang.reflect.Type
-* interface java.lang.reflect.TypeVariable
-* interface java.lang.reflect.WildcardType
-* interface java.net.ContentHandlerFactory
-* interface java.net.FileNameMap
-* interface java.net.URLStreamHandlerFactory
-* interface java.nio.channels.Channel
-* interface java.nio.channels.CompletionHandler
-* interface java.nio.channels.ReadableByteChannel
-* interface java.nio.channels.SeekableByteChannel
-* interface java.nio.channels.WritableByteChannel
-* interface java.nio.file.DirectoryStream
-* interface java.nio.file.DirectoryStream$Filter
-* interface java.nio.file.Path
-* interface java.nio.file.PathMatcher
-* interface java.nio.file.WatchKey
-* interface java.nio.file.WatchService
-* interface java.nio.file.Watchable
-* interface java.nio.file.attribute.BasicFileAttributes
-* interface java.nio.file.attribute.FileAttributeView
-* interface java.nio.file.attribute.FileStoreAttributeView
-* interface java.nio.file.attribute.GroupPrincipal
-* interface java.nio.file.attribute.UserPrincipal
-* interface java.util.Collection
-* interface java.util.Comparator
-* interface java.util.Enumeration
-* interface java.util.Iterator
-* interface java.util.List
-* interface java.util.ListIterator
-* interface java.util.Map
-* interface java.util.Map$Entry
-* interface java.util.Set
-* interface java.util.SortedMap
-* interface java.util.concurrent.Callable
-* interface java.util.concurrent.ExecutorService
-* interface java.util.concurrent.Future
+## The Results (so far)
+* java.io.Console
+* java.io.Console$LineReader
+* java.io.File
+* java.io.File$TempDirectory
+* java.io.FileDescriptor
+* _java.io.FileFilter_
+* java.io.FileNotFoundException
+* _java.io.FilenameFilter_
+* java.io.IOException
+* java.io.InputStream
+* java.io.OutputStream
+* java.io.PrintStream
+* java.io.PrintWriter
+* java.io.Reader
+* _java.io.Serializable_
+* java.io.SyncFailedException
+* java.io.UnsupportedEncodingException
+* java.io.Writer
+* java.lang.AbstractStringBuilder
+* _java.lang.Appendable_
+* java.lang.ArithmeticException
+* java.lang.ArrayIndexOutOfBoundsException
+* java.lang.ArrayStoreException
+* java.lang.Byte
+* java.lang.Byte$ByteCache
+* _java.lang.CharSequence_
+* java.lang.Character
+* java.lang.Character$CharacterCache
+* java.lang.Character$Subset
+* java.lang.Character$UnicodeBlock
+* java.lang.Character$UnicodeScript
+* java.lang.Class
+* java.lang.Class$EnclosingMethodInfo
+* java.lang.Class$MethodArray
+* java.lang.ClassCircularityError
+* java.lang.ClassLoader
+* java.lang.ClassLoader$NativeLibrary
+* java.lang.ClassLoader$ParallelLoaders
+* java.lang.ClassNotFoundException
+* _java.lang.Cloneable_
+* _java.lang.Comparable_
+* java.lang.Double
+* java.lang.Enum
+* java.lang.Error
+* java.lang.Exception
+* java.lang.Float
+* java.lang.IllegalAccessException
+* java.lang.IllegalArgumentException
+* java.lang.IncompatibleClassChangeError
+* java.lang.InstantiationException
+* java.lang.Integer
+* java.lang.Integer$IntegerCache
+* java.lang.InterruptedException
+* _java.lang.Iterable_
+* java.lang.Long
+* java.lang.Long$LongCache
+* java.lang.Math
+* java.lang.NegativeArraySizeException
+* java.lang.NoSuchFieldException
+* java.lang.NoSuchMethodException
+* java.lang.NullPointerException
+* java.lang.NumberFormatException
+* java.lang.Object
+* java.lang.OutOfMemoryError
+* java.lang.Package
+* _java.lang.Runnable_
+* java.lang.RuntimeException
+* java.lang.SecurityException
+* java.lang.SecurityManager
+* java.lang.Short
+* java.lang.Short$ShortCache
+* java.lang.StackTraceElement
+* java.lang.String
+* java.lang.String$CaseInsensitiveComparator
+* java.lang.StringBuffer
+* java.lang.StringBuilder
+* java.lang.System
+* java.lang.Thread
+* java.lang.Thread$Caches
+* java.lang.Thread$State
+* _java.lang.Thread$UncaughtExceptionHandler_
+* java.lang.Thread$WeakClassKey
+* java.lang.ThreadGroup
+* java.lang.Throwable
+* java.lang.Throwable$PrintStreamOrWriter
+* java.lang.Throwable$SentinelHolder
+* java.lang.Throwable$WrappedPrintStream
+* java.lang.Throwable$WrappedPrintWriter
+* _java.lang.annotation.Annotation_
+* java.lang.annotation.ElementType
+* _java.lang.annotation.Target_
+* java.lang.ref.Reference
+* java.lang.ref.Reference$Lock
+* java.lang.ref.Reference$ReferenceHandler
+* java.lang.ref.ReferenceQueue
+* java.lang.ref.ReferenceQueue$Lock
+* java.lang.ref.ReferenceQueue$Null
+* java.lang.reflect.AccessibleObject
+* _java.lang.reflect.AnnotatedElement_
+* java.lang.reflect.Array
+* java.lang.reflect.Constructor
+* java.lang.reflect.Field
+* _java.lang.reflect.GenericArrayType_
+* _java.lang.reflect.GenericDeclaration_
+* _java.lang.reflect.InvocationHandler_
+* java.lang.reflect.InvocationTargetException
+* _java.lang.reflect.Member_
+* java.lang.reflect.Method
+* java.lang.reflect.Modifier
+* _java.lang.reflect.ParameterizedType_
+* java.lang.reflect.Proxy
+* java.lang.reflect.ReflectPermission
+* _java.lang.reflect.Type_
+* _java.lang.reflect.TypeVariable_
+* _java.lang.reflect.WildcardType_
+* java.net.ContentHandler
+* _java.net.ContentHandlerFactory_
+* _java.net.FileNameMap_
+* java.net.InetAddress
+* java.net.InetAddress$Cache
+* java.net.InetAddress$Cache$Type
+* java.net.InetAddress$CacheEntry
+* java.net.MalformedURLException
+* java.net.NetworkInterface
+* java.net.Proxy
+* java.net.Proxy$Type
+* java.net.SocketAddress
+* java.net.SocketException
+* java.net.URI
+* java.net.URI$Parser
+* java.net.URISyntaxException
+* java.net.URL
+* java.net.URLConnection
+* java.net.URLStreamHandler
+* _java.net.URLStreamHandlerFactory_
+* java.net.UnknownHostException
+* java.nio.Buffer
+* java.nio.ByteBuffer
+* java.nio.ByteOrder
+* java.nio.CharBuffer
+* java.nio.DoubleBuffer
+* java.nio.FloatBuffer
+* java.nio.IntBuffer
+* java.nio.LongBuffer
+* java.nio.MappedByteBuffer
+* java.nio.ShortBuffer
+* java.nio.channels.AsynchronousFileChannel
+* _java.nio.channels.Channel_
+* _java.nio.channels.CompletionHandler_
+* java.nio.channels.FileChannel
+* java.nio.channels.FileChannel$MapMode
+* java.nio.channels.FileLock
+* _java.nio.channels.ReadableByteChannel_
+* _java.nio.channels.SeekableByteChannel_
+* _java.nio.channels.WritableByteChannel_
+* java.nio.charset.CharacterCodingException
+* java.nio.charset.Charset
+* java.nio.charset.CharsetDecoder
+* java.nio.charset.CharsetEncoder
+* java.nio.charset.CoderResult
+* java.nio.charset.CoderResult$Cache
+* java.nio.charset.CodingErrorAction
+* java.nio.file.AccessMode
+* _java.nio.file.CopyOption_
+* _java.nio.file.DirectoryStream_
+* _java.nio.file.DirectoryStream$Filter_
+* java.nio.file.FileStore
+* java.nio.file.FileSystem
+* java.nio.file.LinkOption
+* _java.nio.file.OpenOption_
+* _java.nio.file.Path_
+* _java.nio.file.PathMatcher_
+* _java.nio.file.WatchEvent$Kind_
+* _java.nio.file.WatchEvent$Modifier_
+* _java.nio.file.WatchKey_
+* _java.nio.file.WatchService_
+* _java.nio.file.Watchable_
+* _java.nio.file.attribute.BasicFileAttributes_
+* _java.nio.file.attribute.FileAttribute_
+* _java.nio.file.attribute.FileAttributeView_
+* _java.nio.file.attribute.FileStoreAttributeView_
+* java.nio.file.attribute.FileTime
+* java.nio.file.attribute.FileTime$DaysAndNanos
+* _java.nio.file.attribute.GroupPrincipal_
+* _java.nio.file.attribute.UserPrincipal_
+* java.nio.file.attribute.UserPrincipalLookupService
+* java.nio.file.spi.FileSystemProvider
+* java.security.CodeSigner
+* java.security.CodeSource
+* java.security.InvalidKeyException
+* java.security.NoSuchAlgorithmException
+* java.security.NoSuchProviderException
+* java.security.Permission
+* java.security.PermissionCollection
+* _java.security.Principal_
+* java.security.ProtectionDomain
+* java.security.ProtectionDomain$Key
+* _java.security.PublicKey_
+* java.security.SignatureException
+* java.security.Timestamp
+* java.security.cert.CertPath
+* java.security.cert.CertPath$CertPathRep
+* java.security.cert.Certificate
+* java.security.cert.Certificate$CertificateRep
+* java.security.cert.CertificateEncodingException
+* java.security.cert.CertificateException
+* java.util.ArrayList
+* java.util.ArrayList$Itr
+* java.util.ArrayList$ListItr
+* java.util.ArrayList$SubList
+* _java.util.Collection_
+* _java.util.Comparator_
+* java.util.Date
+* _java.util.Enumeration_
+* java.util.InvalidPropertiesFormatException
+* _java.util.Iterator_
+* _java.util.List_
+* _java.util.ListIterator_
+* java.util.Locale
+* java.util.Locale$Builder
+* java.util.Locale$Cache
+* java.util.Locale$Category
+* java.util.Locale$LocaleKey
+* java.util.Locale$LocaleNameGetter
+* _java.util.Map_
+* _java.util.Map$Entry_
+* java.util.MissingResourceException
+* java.util.Properties
+* java.util.Properties$LineReader
+* java.util.Random
+* _java.util.Set_
+* _java.util.SortedMap_
+* java.util.Vector
+* java.util.Vector$Itr
+* java.util.Vector$ListItr
+* _java.util.concurrent.Callable_
+* java.util.concurrent.ExecutionException
+* _java.util.concurrent.ExecutorService_
+* _java.util.concurrent.Future_
+* java.util.concurrent.TimeUnit
+* java.util.concurrent.TimeoutException
+* java.util.spi.LocaleNameProvider
