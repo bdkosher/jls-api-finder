@@ -16,10 +16,7 @@ types referenced by the specification can be considered the "core" part of the p
 to the Java language itself.
 
 ## TODO
-* Don't differentiate classes and interfaces in output list
-* Exclude primitives from output
-* Better handling of array types
-* Ignore private inner types, especially anonymous ones
+* Ignore private inner types
 * Configurable input list of type names
 * Screen scrape the HTML specification to locate directly-referenced types
 
