@@ -3,12 +3,12 @@ package org.washcom.jlsapi;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-
 
 /**
  * This class finds all of the types that are directly mentioned in the Java
@@ -80,7 +80,7 @@ public class Finder {
             add("java.lang.annotation.Target");
             add("java.lang.annotation.ElementType");
             add("java.lang.ClassCircularityError");
-            
+
             // Classes listed in Examples
             add("java.util.Vector");
             add("java.util.Collection");
@@ -120,13 +120,13 @@ public class Finder {
     }
 
     static void analyzeType(Class<?> type) {
-        if (type == null || type.isPrimitive() || type.isAnonymousClass()) {
+        if (type == null || type.isPrimitive() || type.isAnonymousClass() || Modifier.isPrivate(type.getModifiers())) {
             return;
         } else if (type.isArray()) {
             analyzeType(type.getComponentType());
             return;
         }
-        
+
         if (specialTypes.contains(type)) {
             return;
         }
@@ -134,16 +134,22 @@ public class Finder {
 
         analyzeTypes(type.getDeclaredClasses());
         for (Field field : type.getFields()) {
-            analyzeType(field.getType());
+            if (!Modifier.isPrivate(field.getModifiers())) {
+                analyzeType(field.getType());
+            }
         }
         for (Method method : type.getMethods()) {
-            analyzeType(method.getReturnType());
-            analyzeTypes(method.getParameterTypes());
-            analyzeTypes(method.getExceptionTypes());
+            if (!Modifier.isPrivate(method.getModifiers())) {
+                analyzeType(method.getReturnType());
+                analyzeTypes(method.getParameterTypes());
+                analyzeTypes(method.getExceptionTypes());
+            }
         }
         for (Constructor constructor : type.getConstructors()) {
-            analyzeTypes(constructor.getParameterTypes());
-            analyzeTypes(constructor.getExceptionTypes());
+            if (!Modifier.isPrivate(constructor.getModifiers())) {
+                analyzeTypes(constructor.getParameterTypes());
+                analyzeTypes(constructor.getExceptionTypes());
+            }
         }
     }
 
@@ -153,7 +159,9 @@ public class Finder {
         }
         for (Class<?> type : specialTypes) {
             String delim = type.isInterface() ? "_" : "";
-            System.out.println("* " + delim + type.getName() + delim);
+            String link = "http://docs.oracle.com/javase/7/docs/api/index.html?"
+                    + type.getName().replaceAll("\\.", "/").replaceAll("\\$", ".") + ".html";
+            System.out.println("1. [" + delim + type.getName().replaceAll("\\$", ".") + delim + "](" + link + ")");
         }
         System.out.println(specialTypes.size() + " types in total.");
     }

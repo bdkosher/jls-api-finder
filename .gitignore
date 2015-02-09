@@ -48,3 +48,4 @@ Temporary Items
 # NetBeans
 .nb-gradle/
 build/
+.nb-gradle-properties
