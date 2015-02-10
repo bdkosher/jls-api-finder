@@ -101,10 +101,6 @@ public class Finder {
 
     });
 
-    static boolean isPackageName(String special) {
-        return special.endsWith("*");
-    }
-
     static void analyzeTypeName(String typeName) {
         try {
             analyzeType(Class.forName(typeName));
