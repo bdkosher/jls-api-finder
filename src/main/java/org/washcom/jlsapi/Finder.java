@@ -127,7 +127,9 @@ public class Finder {
             return;
         }
         specialTypes.add(type);
-
+        
+        analyzeTypes(type.getInterfaces());
+        analyzeType(type.getSuperclass());
         analyzeTypes(type.getDeclaredClasses());
         for (Field field : type.getFields()) {
             if (!Modifier.isPrivate(field.getModifiers())) {
